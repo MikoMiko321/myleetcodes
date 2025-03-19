@@ -8,6 +8,8 @@ class Solution:
         i = 0
         while i + k_value < len(nums):
             if nums[i + k_value] == val:
+                """ Здесь важен порядок проверки! Сперва мы проверяем,
+                что не выходим за рамки массива и только потом - элементы этого самого массива."""
                 while i + k_value < len(nums) and nums[i + k_value] == val:
                     k_value += 1
                 if i + k_value >= len(nums):
@@ -20,7 +22,7 @@ class Solution:
                 nums[i] = nums[i + k_value]
                 i += 1
         print(nums)
-        return len(nums) - k_value
+        return len(nums) - k_value  """ Здесь я был невнимателен к условию задачи """
 
 
 solution = Solution()
