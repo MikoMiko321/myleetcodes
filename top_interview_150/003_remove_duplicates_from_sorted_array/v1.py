@@ -2,6 +2,8 @@ class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
         """
         Complexity: O(N)
+        Это решение было сделано по принципу задача сводится к предыдущей. Фактически же, мне просто нужно искать следующее число которое БОЛЬШЕ текущего.
+        
         Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
         The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
