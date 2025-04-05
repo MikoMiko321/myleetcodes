@@ -1,5 +1,5 @@
 # myleetcodes
-My solutions for  https://leetcode.com/problems
+My solutions for  https://leetcode.com/studyplan/top-interview-150/
 
 Важные замечания:
 
