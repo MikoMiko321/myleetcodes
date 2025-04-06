@@ -28,7 +28,3 @@ class Solution(object):
         return k
 
 
-solution = Solution()
-input_nums = [1,1,1,2,2,2,3,3]
-print(input_nums)
-print(solution.removeDuplicates(input_nums), input_nums)
