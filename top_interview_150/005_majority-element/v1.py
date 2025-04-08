@@ -1,4 +1,7 @@
-# This is O(n^2) solution
+# This is time complexity O(n^2) solution but space complexity O(1)
+from os import supports_dir_fd
+
+
 class Solution(object):
     def majorityElement(self, nums):
         """
@@ -9,7 +12,8 @@ class Solution(object):
         counter = 0
         i = 0
         while i < len(nums):
-            if nums[i] != dummy:
+            if nums[
+                i] != dummy:  # lesson to learn: "==" checks if values are equal, "is" checks if objects are the same (i.e., same memory address).
                 current_element = nums[i]
                 j = i
                 while j < len(nums):
@@ -25,6 +29,6 @@ class Solution(object):
 
 
 solution = Solution()
-test_subject = [1000,2,1001,1000,1000]
+test_subject = [1000, 2, 1001, 1000, 1000]
 print(test_subject)
 print(solution.majorityElement(test_subject))
