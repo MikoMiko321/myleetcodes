@@ -1,4 +1,4 @@
-# My first solution was super lazy and recursive, so i got out of time error.
+# My first solution was super lazy and recursive, so I got "Time Limit Exceeded" (TLE) error.
 class Solution(object):
     def maxProfit(self, prices):
         """
