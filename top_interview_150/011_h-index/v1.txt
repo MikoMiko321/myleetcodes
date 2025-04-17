@@ -1,0 +1,36 @@
+# THIS IS SOMEWHAT DEAD END SOLUTION, JUST FOR REFERENCE
+class Solution(object):
+    def hIndex(self, citations):
+        """
+        :type citations: List[int]
+        :rtype: int
+        Ошибки которые я допустил к текущему моменту:
+        1) максимальное число цитат по одной работе может быть больше числа работ
+        2) то, что нужно смотреть сколько работ нам осталось проверить и максимальное число цитат не может быть выше
+        3) то, что индекс цитирования не может уменьшаться
+        """
+        max_citations = 0
+        for i in range(len(citations)):
+            if citations[i] > max_citations:
+                if citations[i] > len(citations) - i:
+                    if len(citations) - i > max_citations:  # Опечатка: вместо вычета итератора, вычел единицу
+                        max_citations_new = len(citations) - i
+                    else:
+                        continue
+                else:
+                    max_citations_new = citations[i]
+                max_citations_new_count = 0
+                for j in range(i, len(citations)):
+                    if citations[j] >= max_citations_new:
+                        max_citations_new_count += 1
+                    if max_citations_new_count >= max_citations_new:
+                        max_citations = max_citations_new
+                        break
+                if max_citations_new_count
+        return max_citations
+
+
+test_array = [4,4,0,0]
+print(test_array)
+solution = Solution()
+print(solution.hIndex(test_array))
