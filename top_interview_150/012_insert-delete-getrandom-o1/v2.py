@@ -1,3 +1,4 @@
+# O(m) complexity, close to O(1)
 import random
 
 class RandomizedSet(object):
