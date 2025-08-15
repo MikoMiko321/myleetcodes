@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>238. Product of Array Except Self</title>
+<style>
+  :root {
+    --bg: #fff;
+    --text: #111;
+    --muted: #586069;
+    --pill-bg: #f2f4f7;
+    --pill-text: #222;
+    --accent: #f59e0b; /* medium */
+    --rule: #e5e7eb;
+    --code-bg: #f6f8fa;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    max-width: 920px;
+    margin: 32px auto 96px;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+  .badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .pill.medium::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 10px 0;
+  }
+  .hint {
+    background: #fffbe6;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .io {
+    border-left: 4px solid #e5e7eb;
+    padding: 10px 14px;
+    background: #fff;
+    margin: 8px 0 18px;
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 15px;
+  }
+  .section-title {
+    font-weight: 700;
+    margin-top: 26px;
+    margin-bottom: 6px;
+  }
+  ul {
+    margin: 0 0 8px 20px;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  code, kbd, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 90%;
+  }
+  .followup {
+    margin-top: 16px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <h1>238. Product of Array Except Self</h1>
+
+    <div class="badges">
+      <span class="pill medium">Medium</span>
+      <span class="pill">Topics</span>
+      <span class="pill">Companies</span>
+      <span class="pill">Hint</span>
+    </div>
+
+    <p>Given an integer array <code>nums</code>, return an array <code>answer</code> such that <code>answer[i]</code> is equal to the product of all the elements of <code>nums</code> except <code>nums[i]</code>.</p>
+    <p>The product of any prefix or suffix of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</p>
+    <p>You must write an algorithm that runs in <code>O(n)</code> time and without using the division operation.</p>
+
+    <div class="section-title">Example 1:</div>
+    <div class="io">
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+    </div>
+
+    <div class="section-title">Example 2:</div>
+    <div class="io">
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+    </div>
+
+    <div class="section-title">Constraints:</div>
+    <ul>
+      <li><code>2 &lt;= nums.length &lt;= 10^5</code></li>
+      <li><code>-30 &lt;= nums[i] &lt;= 30</code></li>
+      <li>The input is generated such that <code>answer[i]</code> is guaranteed to fit in a <strong>32-bit</strong> integer.</li>
+    </ul>
+
+    <p class="followup"><strong>Follow up:</strong> Can you solve the problem in <code>O(1)</code> extra space complexity? (The output array does not count as extra space for space complexity analysis.)</p>
+    <hr/>
+    <p style="color:#6b7280;font-size:13px">Recreated from screenshot for personal study use.</p>
+  </main>
+</body>
+</html>
