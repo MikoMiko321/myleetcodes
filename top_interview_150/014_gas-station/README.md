@@ -1,0 +1,1 @@
+O(N**2) solution 6% can optimize complexity

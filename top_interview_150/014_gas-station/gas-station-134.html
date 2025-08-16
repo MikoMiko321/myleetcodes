@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>134. Gas Station — Mock Page</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #111827;          /* text */
+      --muted:#6b7280;        /* secondary text */
+      --border:#e5e7eb;       /* light border */
+      --badge-medium:#f59e0b; /* orange */
+      --chip:#f3f4f6;         /* chip bg */
+      --code-bg:#f8fafc;      /* code block */
+      --card-bg:#f9fafb;
+      --link:#2563eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial;}
+    .page{max-width:1020px;margin:28px auto;padding:0 24px;}
+    .title-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    h1{margin:0;font-weight:700;font-size:28px;letter-spacing:.2px}
+    .meta{display:flex;align-items:center;gap:8px}
+    .badge{padding:2px 10px;border-radius:999px;color:#fff;background:var(--badge-medium);font-weight:600;font-size:12px}
+    .chips{display:flex;gap:10px;margin-left:6px}
+    .chip{border:1px solid var(--border);background:var(--chip);padding:4px 10px;border-radius:8px;color:var(--muted);font-weight:600;font-size:12px}
+    hr{border:0;border-top:1px solid var(--border);margin:18px 0}
+    p{margin:0 0 12px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+    code{background:var(--code-bg);padding:2px 6px;border-radius:6px}
+    pre{background:var(--code-bg);border:1px solid var(--border);padding:12px;border-radius:10px;overflow:auto}
+    h3{margin:18px 0 8px;font-size:16px}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:14px;margin:12px 0}
+    .io{display:grid;grid-template-columns:88px 1fr;gap:10px}
+    .constraints ul{margin:8px 0 0 20px}
+    .constraints li{margin:6px 0}
+    .note{color:var(--muted);font-size:13px}
+    .footer{color:var(--muted);font-size:12px;margin-top:32px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="title-row">
+      <h1>134. Gas Station</h1>
+      <div class="meta">
+        <span class="badge">Medium</span>
+        <div class="chips">
+          <span class="chip">Topics</span>
+          <span class="chip">Companies</span>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <section>
+      <p>There are <span class="mono">n</span> gas stations along a circular route, where the amount of gas at the <span class="mono">i<sup>th</sup></span> station is <span class="mono">gas[i]</span>.</p>
+      <p>You have a car with an unlimited gas tank and it costs <span class="mono">cost[i]</span> of gas to travel from the <span class="mono">i<sup>th</sup></span> station to its next <span class="mono">(i + 1)<sup>th</sup></span> station. You begin the journey with an empty tank at one of the gas stations.</p>
+      <p>Given two integer arrays <span class="mono">gas</span> and <span class="mono">cost</span>, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return <span class="mono">-1</span>. If there exists a solution, it is guaranteed to be unique.</p>
+    </section>
+
+    <div class="card">
+      <h3>Example 1:</h3>
+      <div class="io">
+        <div class="muted">Input:</div>
+        <div class="mono">gas = [1,2,3,4,5],&nbsp;cost = [3,4,5,1,2]</div>
+        <div class="muted">Output:</div>
+        <div class="mono">3</div>
+      </div>
+      <h3>Explanation:</h3>
+      <p>Start at station <span class="mono">3</span> and fill up with <span class="mono">4</span> unit of gas. Your tank = <span class="mono">0 + 4 = 4</span></p>
+      <p>Travel to station 4. Your tank = <span class="mono">4 - 1 + 5 = 8</span></p>
+      <p>Travel to station 0. Your tank = <span class="mono">8 - 2 + 1 = 7</span></p>
+      <p>Travel to station 1. Your tank = <span class="mono">7 - 3 + 2 = 6</span></p>
+      <p>Travel to station 2. Your tank = <span class="mono">6 - 4 + 3 = 5</span></p>
+      <p>Travel to station 3. Your tank = <span class="mono">5 - 5 + 4 = 4</span>. The gas is just enough to return to the starting station.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example 2:</h3>
+      <div class="io">
+        <div class="muted">Input:</div>
+        <div class="mono">gas = [2,3,4],&nbsp;cost = [3,4,3]</div>
+        <div class="muted">Output:</div>
+        <div class="mono">-1</div>
+      </div>
+      <h3>Explanation:</h3>
+      <p>You can't start at station 0 or 1, as there is not enough gas to travel to the next station.</p>
+      <p>Let's start at station 2 and fill up with <span class="mono">4</span> unit of gas. Your tank = <span class="mono">0 + 4 = 4</span></p>
+      <p>Travel to station 0. Your tank = <span class="mono">4 - 3 + 1 = 2</span></p>
+      <p>Travel to station 1. Your tank = <span class="mono">2 - 3 + 2 = 1</span></p>
+      <p>You cannot travel back to station 2, as it requires <span class="mono">4</span> unit of gas but you only have <span class="mono">1</span>. Therefore, you can't travel around the circuit no matter where you start.</p>
+    </div>
+
+    <section class="constraints card constraints">
+      <h3>Constraints:</h3>
+      <ul class="mono">
+        <li>n == gas.length == cost.length</li>
+        <li>1 &lt;= n &lt;= 10<sup>5</sup></li>
+        <li>0 &lt;= gas[i], cost[i] &lt;= 10<sup>4</sup></li>
+      </ul>
+      <p class="note">The input is generated such that the answer is unique.</p>
+    </section>
+
+    <div class="footer">This static mockup was generated to resemble the original problem statement layout.</div>
+  </main>
+</body>
+</html>
