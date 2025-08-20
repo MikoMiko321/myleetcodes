@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>135. Candy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --pill-bg: #f3f4f6;
+    --pill-text: #111827;
+    --accent-hard: #ef4444; /* red for "Hard" */
+    --rule: #e5e7eb;
+    --code-bg: #f6f8fa;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    max-width: 920px;
+    margin: 32px auto 96px;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+  .badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .pill.hard::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-hard);
+    display: inline-block;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 10px 0;
+  }
+  em { font-style: italic; }
+  .io {
+    border-left: 4px solid #e5e7eb;
+    padding: 10px 14px;
+    background: #fff;
+    margin: 8px 0 18px;
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 15px;
+  }
+  .section-title {
+    font-weight: 700;
+    margin-top: 26px;
+    margin-bottom: 6px;
+  }
+  ul {
+    margin: 0 0 8px 20px;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  code, kbd, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 90%;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 24px 0;
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <h1>135. Candy</h1>
+
+    <div class="badges">
+      <span class="pill hard">Hard</span>
+      <span class="pill">Topics</span>
+      <span class="pill">Companies</span>
+    </div>
+
+    <p>There are <code>n</code> children standing in a line. Each child is assigned a rating value given in the integer array <code>ratings</code>.</p>
+
+    <p>You are giving candies to these children subjected to the following requirements:</p>
+    <ul>
+      <li>Each child must have at least one candy.</li>
+      <li>Children with a higher rating get more candies than their neighbors.</li>
+    </ul>
+
+    <p>Return the <em>minimum number of candies you need to have to distribute the candies to the children</em>.</p>
+
+    <div class="section-title">Example 1:</div>
+    <div class="io">
+Input: ratings = [1,0,2]
+Output: 5
+Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+    </div>
+
+    <div class="section-title">Example 2:</div>
+    <div class="io">
+Input: ratings = [1,2,2]
+Output: 4
+Explanation: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
+The third child gets 1 candy because it satisfies the above two conditions.
+    </div>
+
+    <div class="section-title">Constraints:</div>
+    <ul>
+      <li><code>n == ratings.length</code></li>
+      <li><code>1 &lt;= n &lt;= 2 * 10^4</code></li>
+      <li><code>0 &lt;= ratings[i] &lt;= 2 * 10^4</code></li>
+    </ul>
+
+    <hr/>
+    <p style="color:#6b7280;font-size:13px">Recreated from screenshot for personal study use.</p>
+  </main>
+</body>
+</html>
