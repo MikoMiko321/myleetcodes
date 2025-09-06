@@ -26,12 +26,7 @@ n = int(input())
 exam_data = []
 for i in range(0, n):
 	last_name, task_id, result = map(str, input().split())
-	exam_data.append({"last_name":last_name, "task_id":int(task_id), "result":result})
-
-for entry in exam_data:
-    cur.execute("INSERT INTO exam_results (last_name, task_id, result) VALUES (?, ?, ?)",
-    (entry["last_name"], entry["task_id"], entry["result"]))
-
+	cur.execute("INSERT INTO exam_results (last_name, task_id, result) VALUES (?, ?, ?)", (last_name, task_id, result))
 connection.commit()
 
 cur.execute("""
@@ -43,11 +38,6 @@ FROM exam_results
 GROUP BY last_name
 ORDER BY last_name ASC;
 """)
-
 rows = cur.fetchall()
 for row in rows:
     print(*row)
-
-
-
-
