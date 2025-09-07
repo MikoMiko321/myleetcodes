@@ -12,8 +12,9 @@ class Solution(object):
         counter = 0
         i = 0
         while i < len(nums):
-            if nums[
-                i] != dummy:  # lesson to learn: "==" checks if values are equal, "is" checks if objects are the same (i.e., same memory address).
+            if (
+                nums[i] != dummy
+            ):  # lesson to learn: "==" checks if values are equal, "is" checks if objects are the same (i.e., same memory address).
                 current_element = nums[i]
                 j = i
                 while j < len(nums):

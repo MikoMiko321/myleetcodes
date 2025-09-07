@@ -1,10 +1,12 @@
 # This is a draft solution, which isn't working now
 
+
 class Solution(object):
     precession_activated = False
     precession = 0
     first_value = True
     extrasave_activated = False
+
     def rotate(self, nums, k):
         """
         :type nums: List[int]
@@ -25,12 +27,16 @@ class Solution(object):
         elem_address = self.get_next_elem_address(nums, elem_address, k)
         self.precession_activated = False
         while i < len(nums):
-            if elem_address == 0 and i != len(nums) - 1 and self.precession != 1:
+            if (
+                elem_address == 0
+                and i != len(nums) - 1
+                and self.precession != 1
+            ):
                 elem_address += 1
                 i -= 1
                 self.extrasave_activated = True
             if self.extrasave_activated and i == len(nums) - 1:
-                 elem_address = 0
+                elem_address = 0
             if self.precession_activated:
                 saved_value_new = nums[elem_address + self.precession]
                 nums[elem_address] = saved_value_old
@@ -57,7 +63,8 @@ class Solution(object):
                 self.precession_activated = True
         return next_elem_address
 
-test_array = [1,2,3,4,5,6]
+
+test_array = [1, 2, 3, 4, 5, 6]
 print(test_array)
 solution = Solution()
 solution.rotate(test_array, 4)

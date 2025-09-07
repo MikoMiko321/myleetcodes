@@ -17,7 +17,13 @@ class Solution(object):
         #     if citations[j] > maximum_value:
         #         maximum_value = citations[j]
         #     maximum_value += citations[j]
-        theoretical_h_index_maximum = int(min(max(citations), len(citations), math.floor(math.sqrt(sum(citations)))))
+        theoretical_h_index_maximum = int(
+            min(
+                max(citations),
+                len(citations),
+                math.floor(math.sqrt(sum(citations))),
+            )
+        )
         # theoretical_h_index_maximum = int(min(maximum_value, len(citations), math.floor(math.sqrt(total_value))))
         for i in range(theoretical_h_index_maximum, 0, -1):
             i_count = 0

@@ -35,8 +35,12 @@ def test_is_plagiat():
     assert (
         is_plagiat("word", "wo") == True
     ), "Пример 4: неполное совпадение, но не больше одной новой буквы"
-    assert is_plagiat("word", "DRow") == True, "Пример 5: регистр не важен, буквы те же"
-    assert is_plagiat("word", "WeLcOmE") == False, "Пример 6: почти ничего общего"
+    assert (
+        is_plagiat("word", "DRow") == True
+    ), "Пример 5: регистр не важен, буквы те же"
+    assert (
+        is_plagiat("word", "WeLcOmE") == False
+    ), "Пример 6: почти ничего общего"
 
     print("✅ All 6 tests passed.")
 

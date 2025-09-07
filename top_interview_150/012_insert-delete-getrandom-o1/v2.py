@@ -1,6 +1,7 @@
 # O(m) complexity, close to O(1)
 import random
 
+
 class RandomizedSet(object):
 
     def __init__(self):
@@ -38,6 +39,7 @@ class RandomizedSet(object):
         :rtype: int
         """
         return random.choice(self.data)
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()

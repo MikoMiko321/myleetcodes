@@ -8,8 +8,10 @@ class Solution(object):
         candy = [1] * len(ratings)
         advantage_map = []
         # create advantage map and place initial ammount of candy
-        for i in range (len(ratings)):
-            if (i > 0 and ratings[i] > ratings[i - 1]) or (i + 1 < len(ratings) and ratings[i] > ratings[i + 1]): # Advantage condition
+        for i in range(len(ratings)):
+            if (i > 0 and ratings[i] > ratings[i - 1]) or (
+                i + 1 < len(ratings) and ratings[i] > ratings[i + 1]
+            ):  # Advantage condition
                 advantage_map.append(1)
             else:
                 advantage_map.append(0)
@@ -55,8 +57,9 @@ class Solution(object):
         print(final_result)
         return sum(final_result)
 
+
 mysolution = Solution()
-arr = [1,0,2]
+arr = [1, 0, 2]
 # [1,6,10,8,7,3,2]
 # [1,2,87,87,87,2,1]
 # name: str = "Peter"

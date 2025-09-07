@@ -1,5 +1,6 @@
 import random
 
+
 class RandomizedSet(object):
 
     def __init__(self):
@@ -32,6 +33,7 @@ class RandomizedSet(object):
         :rtype: int
         """
         return random.choice(tuple(self.randomized_set))
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()

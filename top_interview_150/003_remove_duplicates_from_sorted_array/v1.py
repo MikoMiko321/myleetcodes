@@ -3,7 +3,7 @@ class Solution:
         """
         Complexity: O(N)
         Это решение было сделано по принципу задача сводится к предыдущей. Фактически же, мне просто нужно искать следующее число которое БОЛЬШЕ текущего.
-        
+
         Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
         The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
@@ -12,20 +12,32 @@ class Solution:
         Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially.
         The remaining elements of nums are not important as well as the size of nums. Return k.
         """
-        k_value = len(nums) - 0  # Число уникальных элементов выразим как элементов всего - повторов => повторы = всего - уникальные
+        k_value = (
+            len(nums) - 0
+        )  # Число уникальных элементов выразим как элементов всего - повторов => повторы = всего - уникальные
         duplicate_number = None  # Current number that we consider duplicate
         i = 0
-        while i + len(nums) - k_value + 1 < len(nums):  # While we have NEXT element available
-            if nums[i + len(nums) - k_value] == nums[i + len(nums) - k_value + 1]:  # If next number is duplicate
+        while i + len(nums) - k_value + 1 < len(
+            nums
+        ):  # While we have NEXT element available
+            if (
+                nums[i + len(nums) - k_value]
+                == nums[i + len(nums) - k_value + 1]
+            ):  # If next number is duplicate
                 duplicate_number = nums[i + len(nums) - k_value]
                 # Ниже важен порядок проверки! Сперва мы проверяем, что не выходим
                 # за рамки массива и только потом - элементы этого самого массива.
-                while i + len(nums) - k_value + 1 < len(nums) and nums[i + len(nums) - k_value + 1] == duplicate_number:
+                while (
+                    i + len(nums) - k_value + 1 < len(nums)
+                    and nums[i + len(nums) - k_value + 1] == duplicate_number
+                ):
                     k_value -= 1
                 if i + len(nums) - k_value + 1 >= len(nums):
                     return k_value
                 else:
-                    nums[i + 1] = nums[i + len(nums) - k_value + 1]  # We write unique to the first duplicate in the next slot
+                    nums[i + 1] = nums[
+                        i + len(nums) - k_value + 1
+                    ]  # We write unique to the first duplicate in the next slot
                     i += 1
             else:
                 nums[i + 1] = nums[i + len(nums) - k_value + 1]

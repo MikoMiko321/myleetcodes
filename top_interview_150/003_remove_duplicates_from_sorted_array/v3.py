@@ -14,8 +14,10 @@ class Solution:
         """
         unique_set = set(nums)
         nums = list(unique_set)
-        return len(unique_set)  # Число уникальных элементов выразим как элементов всего - повторов => повторы = всего - уникальные
+        return len(
+            unique_set
+        )  # Число уникальных элементов выразим как элементов всего - повторов => повторы = всего - уникальные
 
 
 solution = Solution()
-solution.removeDuplicates([1,1,2])
+solution.removeDuplicates([1, 1, 2])

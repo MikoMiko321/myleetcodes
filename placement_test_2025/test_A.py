@@ -20,16 +20,22 @@ import sqlite3
 
 connection = sqlite3.connect(":memory:")
 cur = connection.cursor()
-cur.execute("CREATE TABLE exam_results (last_name TEXT, task_id INTEGER, result TEXT)")
+cur.execute(
+    "CREATE TABLE exam_results (last_name TEXT, task_id INTEGER, result TEXT)"
+)
 
 n = int(input())
 exam_data = []
 for i in range(0, n):
-	last_name, task_id, result = map(str, input().split())
-	cur.execute("INSERT INTO exam_results (last_name, task_id, result) VALUES (?, ?, ?)", (last_name, task_id, result))
+    last_name, task_id, result = map(str, input().split())
+    cur.execute(
+        "INSERT INTO exam_results (last_name, task_id, result) VALUES (?, ?, ?)",
+        (last_name, task_id, result),
+    )
 connection.commit()
 
-cur.execute("""
+cur.execute(
+    """
 SELECT
     last_name,
     COUNT(*) AS total_attempts,
@@ -37,7 +43,8 @@ SELECT
 FROM exam_results
 GROUP BY last_name
 ORDER BY last_name ASC;
-""")
+"""
+)
 rows = cur.fetchall()
 for row in rows:
     print(*row)

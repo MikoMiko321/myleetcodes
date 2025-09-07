@@ -12,7 +12,9 @@ class Solution(object):
         i = 0
         while i + offset < length:
             if nums[i + offset] > last_value:
-                last_value = nums[i + offset]  # Here I wasn't paying attention offset should be used for everything except when we write TO nums[i]
+                last_value = nums[
+                    i + offset
+                ]  # Here I wasn't paying attention offset should be used for everything except when we write TO nums[i]
                 second = False
                 nums[i] = nums[i + offset]
                 k += 1
@@ -26,5 +28,3 @@ class Solution(object):
                 else:
                     offset += 1
         return k
-
-

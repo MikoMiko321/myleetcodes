@@ -8,6 +8,7 @@
 # 1 conceptual big mistake, my initial formula didn't take into account fact that subarray should be unbreakable
 # 2 small mistakes in code logic
 
+
 class Solution(object):
     def countCompleteSubarrays(self, nums):
         """
@@ -31,7 +32,9 @@ class Solution(object):
                     return complete_subarrays
             while tail < len(nums):
                 if minimum_complete_subarray[nums[tail]] > 1:
-                    minimum_complete_subarray[nums[tail]] -= 1  # I was modifying tail before changing current value
+                    minimum_complete_subarray[
+                        nums[tail]
+                    ] -= 1  # I was modifying tail before changing current value
                     tail += 1
                 else:
                     break

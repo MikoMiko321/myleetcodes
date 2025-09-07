@@ -23,11 +23,13 @@ class Solution(object):
             total_product *= nums[i]
         print(zeroes)
         if zeroes[0] == 1:
-            answer = [total_product if i == zeroes[1] else 0 for i in range (len(nums))]
+            answer = [
+                total_product if i == zeroes[1] else 0 for i in range(len(nums))
+            ]
             return answer
-        answer = [total_product//nums[i] for i in range(len(nums))]
+        answer = [total_product // nums[i] for i in range(len(nums))]
         return answer
 
 
 mysoultion = Solution()
-print(mysoultion.productExceptSelf([0,1,0,-3,0]))
+print(mysoultion.productExceptSelf([0, 1, 0, -3, 0]))

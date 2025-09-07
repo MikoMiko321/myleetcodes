@@ -22,7 +22,8 @@ class Solution(object):
             next_elem_address = overflow % len(nums)
         return next_elem_address
 
-test_array = [1,2,3,4,5,6]
+
+test_array = [1, 2, 3, 4, 5, 6]
 print(test_array)
 solution = Solution()
 solution.rotate(test_array, 4)

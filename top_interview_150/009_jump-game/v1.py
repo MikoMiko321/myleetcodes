@@ -5,8 +5,10 @@ class Solution(object):
         :rtype: bool
         """
         obstacle_zero_at = None
-        for i in range(len(nums)-1, -1, -1):
-            if nums[i] == 0 and i != len(nums) - 1 and obstacle_zero_at is None:  # I forgot to include the last condition even though I've realized that its necessary.
+        for i in range(len(nums) - 1, -1, -1):
+            if (
+                nums[i] == 0 and i != len(nums) - 1 and obstacle_zero_at is None
+            ):  # I forgot to include the last condition even though I've realized that its necessary.
                 obstacle_zero_at = i
             if obstacle_zero_at is not None:
                 if nums[i] > obstacle_zero_at - i:
